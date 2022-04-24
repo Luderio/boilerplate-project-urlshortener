@@ -1,4 +1,5 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
+dotenv.config();
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -31,7 +32,9 @@ app.listen(port, function() {
 
 //database
 const mySecret = process.env['MONGO_URI'];//check this if error
-mongoose.connect(mySecret, {userNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(mySecret, {useNewUrlParser: true, useUnifiedTopology: true});
+
+console.log(mySecret);
 
 //SCHEMA
 const urlSchema = mongoose.Schema({
