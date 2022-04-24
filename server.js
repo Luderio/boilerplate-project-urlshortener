@@ -31,10 +31,8 @@ app.listen(port, function() {
 //----------------------------------------------
 
 //database
-const mySecret = process.env['MONGO_URI'];//check this if error
+const mySecret = process.env['MONGO_URI'];//check this if error rename the ENV file to just (.env)
 mongoose.connect(mySecret, {useNewUrlParser: true, useUnifiedTopology: true});
-
-console.log(mySecret);
 
 //SCHEMA
 const urlSchema = mongoose.Schema({
